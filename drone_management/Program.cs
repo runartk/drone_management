@@ -1,11 +1,17 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using drone_management.database;
+using drone_management.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
 
 // Add services to the container.
-
-builder.Services.AddControllers();
+services.AddDbContext<DroneContext>();
+services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
+
+services.AddScoped<IDroneService,DroneService>();
 
 var app = builder.Build();
 

@@ -1,14 +1,12 @@
 ﻿using System;
 namespace drone_management.Services
 {
-	public class DroneService : IDroneService
-	{
-        ILogger<DroneService> _logger;
+    public class DroneService : IDroneService
+    {
 
-		public DroneService(Logger<DroneService> logger)
-		{
-            _logger = logger;
-		}
+        public DroneService()
+        {
+        }
 
         public void Create(string name)
         {
@@ -21,4 +19,3 @@ namespace drone_management.Services
         }
     }
 }
-
