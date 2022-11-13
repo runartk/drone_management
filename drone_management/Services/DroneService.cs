@@ -6,7 +6,7 @@ namespace drone_management.Services
 {
     public class DroneService : IDroneService
     {
-        DroneContext _db;
+        private DroneContext _db;
 
         public DroneService(DroneContext db)
         {
