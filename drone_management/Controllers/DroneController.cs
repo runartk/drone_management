@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using drone_management.Models;
 using drone_management.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,10 +17,10 @@ namespace drone_management.Controllers
         private readonly ILogger<DroneController> _logger;
         private IDroneService _droneService;
 
-        public DroneController(ILogger<DroneController> logger)
+        public DroneController(ILogger<DroneController> logger, IDroneService droneService)
         {
             _logger = logger;
-            _droneService = new DroneService();
+            _droneService = droneService;
         }
 
         // GET: /<controller>/
@@ -33,14 +34,31 @@ namespace drone_management.Controllers
             catch (Exception e)
             {
                 _logger.LogError(e.Message.ToString());
-                throw e;
+                throw;
             }
 
             return "Successfully created new drone with name: " + name;
         }
 
+        [HttpGet("drones")]
+        public List<DroneModel> GetDrones()
+        {
+            List<DroneModel> drones;
+            try
+            {
+                drones = _droneService.GetDrones();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message.ToString());
+                throw;
+            }
+
+            return drones;
+        }
+
         [HttpDelete("delete/{id}")]
-        public async void Delete(int id)
+        public async void Delete(Guid id)
         {
             try
             {
@@ -49,9 +67,8 @@ namespace drone_management.Controllers
             catch (Exception e)
             {
                 _logger.LogError(e.Message.ToString());
-                throw e;
+                throw;
             }
         }
     }
 }
-

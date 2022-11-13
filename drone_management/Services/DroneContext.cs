@@ -7,12 +7,12 @@ namespace drone_management.database
 {
 	public class DroneContext : DbContext
 	{
-		public DbSet<DroneModel> drones { get; set; }
+		public DbSet<DroneModel> Drones { get; set; }
         protected readonly IConfiguration _configuration;
 
         public DroneContext(IConfiguration configuration)
 		{
-            _configuration = configuration;
+            _configuration = (IConfiguration)configuration;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
