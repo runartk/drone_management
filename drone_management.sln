@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1704.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drone_management", "drone_management\drone_management.csproj", "{4CD1C96A-3FBA-4945-A13B-3D84252877F9}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3C580AFC-E66E-4D05-9FCC-118CA0899677}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4CD1C96A-3FBA-4945-A13B-3D84252877F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CD1C96A-3FBA-4945-A13B-3D84252877F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CD1C96A-3FBA-4945-A13B-3D84252877F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C580AFC-E66E-4D05-9FCC-118CA0899677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C580AFC-E66E-4D05-9FCC-118CA0899677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C580AFC-E66E-4D05-9FCC-118CA0899677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C580AFC-E66E-4D05-9FCC-118CA0899677}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
